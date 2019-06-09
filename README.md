@@ -13,3 +13,5 @@
 <p>Currently, I am using generate skyview to generate 10,000 numpy arrays of 5 SDSS bands, and then will use some of the CNN code I have to build a network that will flow from that directory to generate a rotationall invarient network. the dataset is improved in resolution-- I was originally only using 28x28 images and now am moving to 64x64 images. As well as including all five bands.</p>
 
 <p>The data needed to run the code is available to download here: https://drive.google.com/drive/folders/1ufX23uK4TUCGkom_WQlLFRnlU1MpGLWr?usp=sharing </p>
+
+<p>One would also need to download the correct GZ2 file from their website: https://data.galaxyzoo.org/ ; under GZ2, table 1, csv. </p>
