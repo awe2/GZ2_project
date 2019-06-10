@@ -15,3 +15,5 @@
 <p>The data needed to run the code is available to download here: https://drive.google.com/drive/folders/1ufX23uK4TUCGkom_WQlLFRnlU1MpGLWr?usp=sharing </p>
 
 <p>One would also need to download the correct GZ2 file from their website: https://data.galaxyzoo.org/ ; under GZ2, table 1, csv. </p>
+
+<p>5-band_GZ2 is a <i>work in progress</i> for what my first attempt with the updated dataset will be. Everything there is set except for an iterator over the input files (10,000 5-band numpy arrays, ~1.6 Gb) and a way to connect an array of target classifications to the inputs.</p>
