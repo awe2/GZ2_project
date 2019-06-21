@@ -16,8 +16,10 @@
 
 <p>One would also need to download the correct GZ2 file from their website: https://data.galaxyzoo.org/ ; under GZ2, table 1, csv. </p>
 
-<p>5-band_GZ2 is a <i>work in progress</i> for what my first attempt with the updated dataset will be. Everything there is set except for an iterator over the input files (10,000 5-band numpy arrays, ~1.6 Gb) and a way to connect an array of target classifications to the inputs.</p>
-
-<p>Currently, ...w_augmentation is the work in progress file, I am using a custom data generator that has augmentation built into it to read the arrays. As of upload, I don't know why but it gets stuck and spins its wheels without an exception. The Augmentation it performs is flipping both vertical and horizontal 50% of the time, and then rotating the image a random degree</p>
+<p>Currently, ...w_augmentation is the work in progress file, I am using a custom data generator that has augmentation built into it to read the arrays. I normalize each array to the filters maximum = 1 and minimum = 0 for each galaxy. I perform flips, rotations of 45 degrees, shifts of 4 pixels horizontal or vertically, and zooms in range (0.75,1.3). rotations are applied to all, normalization is applied to all, all other augmentations only occur if random.random() returns a value > 0.75, which would be 25% of the time.
 
 <p>w/o augmentation, the best validation accuracy I can achieve is 0.85. In the most recent attempt, I have also thrown away the small sample of 'oddities,' GZ2 labels that were labeled as 'A,' mostly stars. If I wanted to, I could write a binary classifier for stars and galaxies that would serve the purpose of that third class in the pipeline.</p>
+
+<p>w/ augmentation, best score I have achieved is 0.87, the highest I have ever gotten. Still a bit shy of 0.90, but creeping closer.</p>
+
+<p>Plans for what will be done after I have a model that sorts to high precision will be to work on data visualization methods ecspecially interpretability. https://distill.pub/2018/building-blocks/ is a wonderful article about the subject. I think it would be neat to see if my network can identify features of galaxies that are unknown that are useful in identification, and whether these features can be used to discover new science.</p> 
